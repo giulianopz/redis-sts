@@ -21,8 +21,8 @@ spec:
         - "-c"
         - |
           set -ex
-          # Generate mysql server-id from pod ordinal index.
-          [[ echo $HOSTNAME =~ -([0-9]+)$ ]] || exit 1
+          # Generate Redis server-id from pod ordinal index.
+          [[ $(echo $HOSTNAME) =~ -([0-9]+)$ ]] || exit 1
           ordinal=${BASH_REMATCH[1]}
           # Copy appropriate conf.d files from config-map to emptyDir.
           if [[ $ordinal -eq 0 ]]; then
