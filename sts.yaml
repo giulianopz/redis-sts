@@ -59,4 +59,3 @@ spec:
       - name: redis-data
         emptyDir: {}
       - name: config-map
-status: {}
